@@ -23,5 +23,9 @@ function App() {
     </div>
   );
 }
+const h1style = { 
+  "fontSize": "30px", 
+  "color": "#000000"
+  };
 
 export default App;
