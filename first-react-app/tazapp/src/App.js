@@ -5,6 +5,7 @@ import './App.css';
 // h1 element. To return 2 or more, it needs to be placed within a div. 
 
 function Header(name) {
+  console.log(name)
   return <h1>{name} was here</h1>
 }
 
