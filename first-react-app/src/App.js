@@ -1,9 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
+function Header() {
+  return <h1>Tara was here</h1>
+}
+
 function App() {
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
