@@ -13,6 +13,8 @@ function App() {
   return (
     <div className="App">
       <Header name="Tara"  colour="blue" fruit="blueberry"/>
+      <Header name="Tanya"  colour="orange" fruit="orange"/>
+
       <header className="App-header">
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
