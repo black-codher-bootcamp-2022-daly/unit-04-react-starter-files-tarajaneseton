@@ -12,7 +12,7 @@ function Header(props) {
 function App() {
   return (
     <div className="App">
-      <Header name="Tara"  colour="yellow" fruit="banana"/>
+      <Header name="Tara"  colour="blue" fruit="blueberry"/>
       <header className="App-header">
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
