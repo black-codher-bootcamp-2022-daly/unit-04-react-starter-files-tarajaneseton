@@ -23,7 +23,7 @@ function Footer({nickname}) {
 function App() {
   return (
     <div className="App">
-      <Header name="Tara"  colour="blue" fruit="blueberry"/>
+      <Header className="header-highlight" "Tara"  colour="blue" fruit="blueberry"/>
       <Header name="Tanya"  colour="orange" fruit="orange"/>
 
       <header className="App-header">
@@ -42,7 +42,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Footer nickname="Jimy"/>
+      <Footer nickname="Taz"/>
     </div>
   );
 }
