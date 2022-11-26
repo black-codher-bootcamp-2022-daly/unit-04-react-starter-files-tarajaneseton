@@ -9,6 +9,11 @@ function Header(props) {
   return <h1>{props.name} is {props.colour} like a {props.fruit}</h1>
 }
 
+function Footer(props) {
+  
+  return <div>goodbye {props.nickname}</div>
+}
+
 function App() {
   return (
     <div className="App">
@@ -31,6 +36,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Footer nickname="Jimy"/>
     </div>
   );
 }
