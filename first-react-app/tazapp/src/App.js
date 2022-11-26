@@ -6,13 +6,13 @@ import './App.css';
 
 function Header(props) {
   console.log(props.name)
-  return <h1>{props.name} is {props.banana}</h1>
+  return <h1>{props.name} is {props.colour} like {props.fruit}</h1>
 }
 
 function App() {
   return (
     <div className="App">
-      <Header name="Tara"  banana="yellow" />
+      <Header name="Tara"  colour="yellow" fruit="banana"/>
       <header className="App-header">
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
