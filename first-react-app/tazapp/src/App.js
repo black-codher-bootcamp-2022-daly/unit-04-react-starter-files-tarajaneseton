@@ -5,9 +5,9 @@ import './App.css';
 // h1 element. To return 2 or more, it needs to be placed within a div. 
 
 function Header(props) {
-  const { name, colour, fruit } = props;
+  const { name, colour, fruit, className } = props;
   return (
-  <h1>
+  <h1 className={className}>
     {name} is {colour} like a {fruit}
     </h1>
   );
@@ -24,7 +24,7 @@ function Footer({nickname}) {
 function App() {
   return (
     <div className="App">
-      <Header className="header-highlight" "Tara"  colour="blue" fruit="blueberry"/>
+      <Header className="header-tara" "Tara"  colour="blue" fruit="blueberry"/>
       <Header name="Tanya"  colour="orange" fruit="orange"/>
 
       <header className="App-header">
