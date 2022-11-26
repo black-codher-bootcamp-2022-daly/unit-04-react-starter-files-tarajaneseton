@@ -11,7 +11,11 @@ function Header(props) {
 
 function Footer(props) {
   
-  return <div>goodbye {props.nickname}</div>
+  return (
+  <div>
+    goodbye {props.nickname}
+    </div>
+  );
 }
 
 function App() {
