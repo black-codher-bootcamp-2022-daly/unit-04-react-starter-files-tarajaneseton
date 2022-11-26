@@ -6,7 +6,7 @@ import './App.css';
 
 function Header(props) {
   console.log(props.name)
-  return <h1>{props.name} is {props.colour} like {props.fruit}</h1>
+  return <h1>{props.name} is {props.colour} like a {props.fruit}</h1>
 }
 
 function App() {
