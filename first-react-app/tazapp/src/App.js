@@ -6,7 +6,7 @@ import './App.css';
 
 function Header(props) {
   console.log(props.name)
-  return <h1>{props.name} {props.banana}</h1>
+  return <h1>{props.name} is {props.banana}</h1>
 }
 
 function App() {
