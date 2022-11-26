@@ -12,7 +12,7 @@ function Header(name) {
 function App() {
   return (
     <div className="App">
-      <Header name="Nanri" />
+      <Header name="Tara" />
       <header className="App-header">
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
