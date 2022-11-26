@@ -4,7 +4,8 @@ import './App.css';
 // A react component can only return 1 element. in the example below, it will only return 1 
 // h1 element. To return 2 or more, it needs to be placed within a div. 
 
-function Header({ name, colour, fruit }) {
+function Header(props) {
+  const { name, colour, fruit } = props;
   return (
   <h1>
     {name} is {colour} like a {fruit}
