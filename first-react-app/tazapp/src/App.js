@@ -12,11 +12,10 @@ function Header({ name, colour, fruit }) {
   );
 }
 
-function Footer({props}) {
-  
+function Footer({nickname}) {
   return (
   <div>
-    goodbye {props.nickname}
+   <h1> goodbye {nickname}</h1>
     </div>
   );
 }
