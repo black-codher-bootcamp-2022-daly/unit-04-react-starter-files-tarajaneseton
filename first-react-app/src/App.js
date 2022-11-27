@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Header className="header-tara" name="Tara" colour="blue" fruit="blueberyy"/>
         <Header name="Tanya" colour="orange" fruit="orange" />
-        Footer nickname="Taz"/>
+        <Footer nickname="Taz"/>
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
         <img src={logo} className="App-logo" alt="logo" />
