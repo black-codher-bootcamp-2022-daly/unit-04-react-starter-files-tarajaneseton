@@ -21,8 +21,8 @@ function Footer ({ nickname }) {
 function App() {
   return (
     <div className="App">
-      <Header className="header-tara" name="Tara" colour="blue" fruit="blueberyy">
-        <Header name="Tanya" colour="orange" fruit="orange" /
+      <Header className="header-tara" name="Tara" colour="blue" fruit="blueberyy"/>
+        <Header name="Tanya" colour="orange" fruit="orange" />
         Footer nickname="Taz"/>
         <h1>My First React App</h1>
         <h2>by Tara Jane Seton</h2>
