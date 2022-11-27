@@ -47,4 +47,4 @@ const h1style = {
   "color": "#000000"
   };
 
-export default App;
+export { App, Header, Footer };
