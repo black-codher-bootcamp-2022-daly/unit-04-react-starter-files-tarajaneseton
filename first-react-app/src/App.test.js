@@ -3,11 +3,11 @@ import { App, Header } from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/tara/i);
+  const linkElement = screen.getByText(/tobia/i);
   expect(linkElement).toBeInTheDocument();
 });
 test('renders the header', () => {
-  render(<Header name="Tara" />);
-  const linkElement = screen.getByText(/tara/i);
+  render(<Header name="tobia" />);
+  const linkElement = screen.getByText(/tobia/i);
   expect(linkElement).toBeInTheDocument();
 });
