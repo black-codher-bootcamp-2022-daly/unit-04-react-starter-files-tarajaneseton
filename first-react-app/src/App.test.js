@@ -7,7 +7,7 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 test('renders the header', () => {
-  render(<Header />);
+  render(<Header name="Tara" />);
   const linkElement = screen.getByText(/tara/i);
   expect(linkElement).toBeInTheDocument();
 });
