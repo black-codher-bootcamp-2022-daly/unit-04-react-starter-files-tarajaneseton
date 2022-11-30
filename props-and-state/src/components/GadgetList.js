@@ -11,3 +11,6 @@ const GadgetList = (props) => {
 }
 
 export default GadgetList;
+
+//items comes from the headphones list as an attribute on line 14 in index.js, It's an array of information on line 9.
+// map 
