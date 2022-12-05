@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 function Book({book}) {
   const { title } = book.volumeInfo;
   const { authors } = book.volumeInfo;
+  const {subtitle} = book.volumeInfo;
   const { retailPrice } = book.saleInfo;
   return (
     <div 
@@ -19,6 +20,7 @@ function Book({book}) {
       "No Authors Listed"
       }
       </h4>
+      <p>{subtitle}</p>
       {retailPrice && retailPrice.amount < 3 ? "Great deal" : "Bestseller"}
     </div>
     // above is a condition inside the react component. if retailPrice exists, AND if retail price property, amount is higher than 2 then print retailprice.amount, and if not it is free.
