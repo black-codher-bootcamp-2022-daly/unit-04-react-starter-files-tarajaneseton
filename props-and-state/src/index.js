@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
-//import data from './models/headphones.json';
+import data from './models/headphones.json';
 
 import GadgetList from './components/GadgetList';
 import ClickCounter from './components/ClickCounter';
@@ -9,7 +9,7 @@ const mainStyle = {"fontFamily":"Arial"};
 
 const App = () => {
   const headphones =  [{"title":"Headphones 1"},{"title":"Headphones 2"},{"title":"Headphones 3"},{"title":"Headphones 4"},];
-  const [headphonesList] = useState(headphones); //headphonesList is a function, useState is a React function that allows us to say headphoneslist is equal to the array headphones.
+  const [headphonesList] = useState(data); //headphonesList is a function, useState is a React function that allows us to say headphoneslist is equal to the array headphones. data is the json file containing all the headphone info, we are passing it to the usestate function.
 
 return <section style={mainStyle}>
     <h1>Electronics Store</h1>
