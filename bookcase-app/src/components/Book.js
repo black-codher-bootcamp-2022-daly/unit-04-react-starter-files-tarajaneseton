@@ -13,6 +13,7 @@ function Book({book}) {
       backgroundColor: "#d9ccff",
       padding: "10px",
       marginBottom: "4px",
+      fontFamily: "Arial",
     }}>
       <h3>{title}</h3>
       <h4>
@@ -22,13 +23,13 @@ function Book({book}) {
       }
       </h4>
       <p>{subtitle}</p>
-      {retailPrice && retailPrice.amount < 3 ? "Great deal" : "Bestseller"}
+      <p>{retailPrice && retailPrice.amount}</p>
       <p>{description}</p>
     </div>
-    // above is a condition inside the react component. if retailPrice exists, AND if retail price property, amount is higher than 2 then print retailprice.amount, and if not it is free.
+    // above is a condition inside the react component. if retailPrice exists, print retail price amount, if not return nothing
   );
 }
-
+// below are prop types that are checking whether Book has the below properties, title, authors, description and sale info. with isrequired, if we dont pass one of the required properties then the code will break. Shape 
 Book.propTypes = {
   book: PropTypes.shape({
     volumeInfo: PropTypes.shape({
