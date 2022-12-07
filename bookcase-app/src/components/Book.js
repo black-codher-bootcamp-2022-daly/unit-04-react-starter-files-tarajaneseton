@@ -5,7 +5,7 @@ export function Book(props) {
   return (
     <div
       style={{
-        backgroundColor: "red",
+        backgroundColor: "#d2afff",
         padding: "10px",
         marginBottom: "4px",
       }}
