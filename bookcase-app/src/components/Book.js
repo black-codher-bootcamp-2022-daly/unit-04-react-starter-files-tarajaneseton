@@ -1,48 +1,50 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
-function Book({book}) {
-  const { title } = book.volumeInfo;
-  const { authors } = book.volumeInfo;
-  const {subtitle} = book.volumeInfo;
-  const { retailPrice } = book.saleInfo;
-  const { description } = book.volumeInfo;
+export function Book(props) {
   return (
-    <div 
-    style={{
-      backgroundColor: "#d9ccff",
-      padding: "10px",
-      marginBottom: "4px",
-      fontFamily: "Arial",
-    }}>
-      <h3>{title}</h3>
-      <h4>
-        {authors ?
-      authors.join(', '):
-      "No Authors Listed"
-      }
-      </h4>
-      <p>{subtitle}</p>
-      <p>{retailPrice && retailPrice.amount}</p>
-      <p>{description}</p>
+    <div
+      style={{
+        backgroundColor: "red",
+        padding: "10px",
+        marginBottom: "4px",
+      }}
+    >
+      <h3>{props.title}</h3>
+      <p>{props.book.volumeInfo.description}</p>
+      <button onClick={() => props.handleClick(props.id)}>Click me</button>
+      {props.retailPrice && props.retailPrice.amount < 3
+        ? "Great deal"
+        : "Best Seller"}
     </div>
-    // above is a condition inside the react component. if retailPrice exists, print retail price amount, if not return nothing
   );
 }
-// below are prop types that are checking whether Book has the below properties, title, authors, description and sale info. with isrequired, if we dont pass one of the required properties then the code will break. Shape 
-Book.propTypes = {
-  book: PropTypes.shape({
-    volumeInfo: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired,
-    description: PropTypes.string.isRequired,
-  }),
-  saleInfo: PropTypes.shape({
-    retailPrice: PropTypes.shape({
-      amount: PropTypes.number.isRequired,
-    }),
-    }),
-  }),
+
+export function PimpedBook(props) {
+  return (
+    <div style={{ padding: "12px", border: "1px solid", marginBottom: "4px" }}>
+      {props.children}
+    </div>
+  );
 }
 
-export default Book;
+Book.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  retailPrice: PropTypes.shape({
+    amount: PropTypes.number,
+  }),
+  handleClick: PropTypes.func,
+  book: PropTypes.shape({
+    volumeInfo: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      authors: PropTypes.array.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+    saleInfo: PropTypes.shape({
+      retailPrice: PropTypes.shape({
+        amount: PropTypes.number.isRequired,
+      }),
+    }),
+  }),
+};
