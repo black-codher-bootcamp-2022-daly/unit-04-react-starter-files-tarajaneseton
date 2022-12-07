@@ -1,21 +1,32 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export const Search = (props) => {
-  const { keyword, setKeyword } = props;
+  const { keyword, setKeyword, handleSubmit } = props;
 
   function handleChange(changeEvent) {
-    console.log("Tobia event =>", changeEvent);
     setKeyword(changeEvent.target.value);
+  }
+
+  function onSubmit(event) {
+    console.log("hello tara");
+    event.preventDefault();
+    handleSubmit(keyword);
   }
 
   return (
     <form>
-          <p style={{ color: "red" }}>
+      <p style={{ color: "red" }}>
         <em>{keyword && "Keywords Typed: " + keyword}</em>
       </p>
       <input type="text" value={keyword} onChange={handleChange} />
-      <input type="submit" />
+      <input type="submit" onClick={onSubmit} />
     </form>
   );
+};
+
+Search.propTypes = {
+  keyword: PropTypes.string,
+  setKeyword: PropTypes.func,
+  findBooks: PropTypes.func,
 };
