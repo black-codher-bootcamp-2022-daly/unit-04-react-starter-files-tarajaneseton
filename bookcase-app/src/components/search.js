@@ -9,7 +9,6 @@ export const Search = (props) => {
   }
 
   function onSubmit(event) {
-    console.log("hello tara");
     event.preventDefault();
     handleSubmit(keyword);
   }

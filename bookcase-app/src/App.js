@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-
-import { Book, PimpedBook } from "./components/Book";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import { Book } from "./components/Book";
 import { Search } from "./components/Search";
 import data from "./models/books.json";
+import { Bookcase } from "./components/Bookcase";
+import { Booklist } from "./components/Booklist";
 
-function App() {
-  // const books = data
+export function App() {
   const [books, setBooks] = useState(data);
   const [keyword, setKeyword] = useState("");
-  const favoBook = books[4];
+  const [basket, setBasket] = useState([]);
 
-  function addBook(id) {
-    console.log("click happened to id: " + id);
-  }
 
   async function findBooks(value) {
     const url = `https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`;
@@ -23,42 +21,41 @@ function App() {
     }
   }
 
+  //code below creates a basket for the book
+  function addBookToCart(book) {
+    const newBasket = basket;
+    newBasket.push(book);
+    setBasket(newBasket);
+    console.log({ newBasket, basket });
+  }
+
   return (
-    <Booklist>
-      <Search
-        keyword={keyword}
-        setKeyword={setKeyword}
-        handleSubmit={findBooks}
-      />
-      <PimpedBook>
-        <h2>{favoBook.volumeInfo.title}</h2>
-        <p>{favoBook.volumeInfo.description}</p>
-      </PimpedBook>
+    <>
+      <Routes>
+        <Route
+          path="/Search"
+          element={
+            <Booklist>
+              <Search
+                keyword={keyword}
+                setKeyword={setKeyword}
+                handleSubmit={findBooks}
+              />
 
-      <Book
-        handleClick={addBook}
-        id={favoBook.id}
-        title={favoBook.volumeInfo.title}
-        book={favoBook}
-      />
-
-      {books.map((item) => (
-        <PimpedBook>
-          <h2>{item.volumeInfo.title}</h2>
-          <p>{item.volumeInfo.description}</p>
-        </PimpedBook>
-      ))}
-    </Booklist>
+              {books.map((book) => (
+                <Book
+                  key={book.id}
+                  book={book}
+                  handleClick={() => addBookToCart(book)}
+                  onClick={() => addBookToCart(book)}
+                />
+              ))}
+            </Booklist>
+          }
+        ></Route>
+        <Route path="/AboutUs" element={<h1>About us</h1>}></Route>
+        <Route path="/Bookcase" element={<Bookcase books={basket} key={books.id}/>}></Route>
+      </Routes>
+    </>
   );
 }
-
-function Booklist(props) {
-  return (
-    <div>
-      <h1>Tara's library</h1>
-      <div className="booklist-container">{props.children}</div>
-    </div>
-  );
-}
-
-export default App;

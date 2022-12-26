@@ -1,40 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export function Book(props) {
+export function Book(props, handleClick) {
   return (
     <div
       style={{
         backgroundColor: "#d2afff",
         padding: "10px",
         marginBottom: "4px",
+        fontFamily: "verdana",
       }}
     >
-      <h3>{props.title}</h3>
+      <h2>{props.book.volumeInfo.title}</h2>
+      <img src={props.book.volumeInfo.imageLinks.thumbnail} alt={props.book.volumeInfo.title} />
       <p>{props.book.volumeInfo.description}</p>
-      <button onClick={() => props.handleClick(props.id)}>Click me</button>
-      {props.retailPrice && props.retailPrice.amount < 3
+      {/* <h4>{props.saleInfo.retailPrice.currencyCode.amount}</h4> */}
+      <button onClick={() => props.handleClick(props.id)}> { props.isInTheBasket ? "Remove" : "Add +" }</button>
+      {/* <button onClick={handleClick}> Add Book</button> */}
+      {/* {props.retailPrice && props.retailPrice.amount < 3
         ? "Great deal"
-        : "Best Seller"}
+        : "Best Seller"} */}
     </div>
   );
 }
 
-export function PimpedBook(props) {
-  return (
-    <div style={{ padding: "12px", border: "1px solid", marginBottom: "4px" }}>
-      {props.children}
-    </div>
-  );
-}
+// this function below
+// export function PimpedBook(props) {
+//   return (
+//     <div style={{ padding: "12px", border: "1px solid", marginBottom: "4px", backgroundColor: "blue" }}>
+//       {props.children}
+//     </div>
+//   );
+// }
 
 Book.propTypes = {
   id: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  handleClick: PropTypes.func,
+  isInTheBasket: PropTypes.bool,
   retailPrice: PropTypes.shape({
     amount: PropTypes.number,
   }),
-  handleClick: PropTypes.func,
   book: PropTypes.shape({
     volumeInfo: PropTypes.shape({
       title: PropTypes.string.isRequired,
