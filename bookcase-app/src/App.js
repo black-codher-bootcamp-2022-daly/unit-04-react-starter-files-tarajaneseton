@@ -42,10 +42,10 @@ export function App() {
                 handleSubmit={findBooks}
               />
 
-              {books.map((book) => (
+              {books.map((item) => (
                 <Book
-                  key={book.id}
-                  book={book}
+                  key={item.id}
+                  book={item}
                   handleClick={() => addBookToCart(book)}
                   onClick={() => addBookToCart(book)}
                 />
